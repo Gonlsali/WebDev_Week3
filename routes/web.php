@@ -30,3 +30,12 @@ Route::view(
         "maintitle" => "About My Library"
     ]
 );
+
+Route::view(
+    '/contactus',
+    'contact',
+    [
+        "pagetitle" => "Contact Us",
+        "maintitle" => "Contact Data"
+    ]
+);
