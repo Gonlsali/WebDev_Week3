@@ -39,3 +39,12 @@ Route::view(
         "maintitle" => "Contact Data"
     ]
 );
+
+Route::view(
+    '/projects',
+    'projects',
+    [
+        "pagetitle" => "Projects",
+        "maintitle" => "My Projects"
+    ]
+);
