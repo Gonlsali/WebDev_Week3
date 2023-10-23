@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,11 +42,15 @@ Route::view(
     ]
 );
 
+Route::get('/projects', [ProjectController::class, 'index']);
+
+Route::get('/projects/{code}', [ProjectController::class, 'show']);
+
 Route::view(
-    '/projects',
-    'projects',
+    '/viewcontacts',
+    'viewcontacts',
     [
-        "pagetitle" => "Projects",
-        "maintitle" => "My Projects"
+        "pagetitle" => "View Contacts",
+        "maintitle" => "View Contacts"
     ]
 );

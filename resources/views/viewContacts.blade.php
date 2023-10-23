@@ -4,34 +4,32 @@
         <thead class="thead-dark">
             <tr>
                 <th scope="col">No.</th>
-                <th scope="col">Project</th>
-                <th scope="col">Semester</th>
-                <th scope="col">Course</th>
-                <th scope="col">Description</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
             </tr>
         </thead>
+        @php($projects = ['Calculator', 'Accounting', 'Student Report', 'POS Resto', 'Online Store', 'Pet Shop'])
 
         <tbody>
+            @php($i = 0)
             @foreach ($projects as $kerjaan)
-                @if ($loop->even)
+                @php($i++)
+                @if ($i % 2 == 0)
                     @php($semester = 'Even')
                 @else
                     @php($semester = 'Odd')
                 @endif
 
                 <tr>
-                    <th>{{ $loop->index + 1 }}</th>
-                    <td>
-                        <a href="projects/{{ $kerjaan['code'] }}">
-                            {{ $kerjaan['title'] }}
-                        </a>
-                    </td>
+                    <th scope="row">{{ $i }}</th>
+                    <td>{{ $kerjaan }}</td>
                     <td>{{ $semester }}</td>
-                    <td>{{ $kerjaan['course'] }}</td>
                     <td>
-                        @if ($loop->first)
+                        @if ($i == 1)
                             My Very First Project
-                        @elseif ($loop->last)
+                        @elseif ($i == count($projects))
                             My Last Project
                         @else
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
